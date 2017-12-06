@@ -14,7 +14,8 @@ from agents.myagent import *
 # send creatures.
 
 def main():
-    rand_individual = Individual(random=True)
+    filename = "learned_individuals_{0}".format(0)
+    rand_individual = Individual(data=filename,random=True)
     agent = MyAgent(rand_individual)
     task = MarioTask(agent.name, initMarioMode = 2)
     exp = EpisodicExperiment(task, agent)

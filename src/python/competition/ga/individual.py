@@ -35,13 +35,12 @@ class Individual(object):
 
     def gene_index_from_levelscene(self, levelscene, isMarioOnGround, mayMarioJump):
         near_cells = [
-            levelscene[10][10],
-            levelscene[10][11],
             levelscene[10][12],
-            levelscene[11][10],
             levelscene[11][12],
-            levelscene[12][10],
-            levelscene[12][12]
+            levelscene[12][12],
+            levelscene[10][13],
+            levelscene[11][13],
+            levelscene[12][13]
         ]
         cells_info = list(map(lambda cell: '1' if LevelScene.is_obstacle(cell) else '0', near_cells))
         mario_info = [str(int(isMarioOnGround)), str(int(mayMarioJump))]
