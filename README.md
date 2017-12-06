@@ -1,46 +1,33 @@
 # marioai-2009
 Original source code from https://github.com/morishin/marioai-2009
 
-## Run
-### Manual
+## 実行環境
+Python3.6
+## 実行方法
+javaのコンパイラーantをインストールした後、最初のディレクトリで
 ```sh
-java -classpath classes ch.idsia.scenarios.Play
+ant
 ```
-or
+を実行してコンパイルする。
 
-```sh
-ant play
-```
-
-### Using Agent
-```sh
-java -classpath classes ch.idsia.scenarios.Play ch.idsia.ai.agents.ai.ForwardAgent
-```
-
-### Client / Server Control via TCP
-Sever (Java)
-
+マリオサーバーを立ち上げる。
 ```sh
 java -classpath classes ch.idsia.scenarios.MainRun -server on
 ```
-Client (Python)
+
+マリオクライアントを実行
 
 ```sh
-python src/python/competition/ipymario.py
+python src/python/competition/learn.py
 ```
 
-Run the following setup before exec if necessary.
-
-## Develop
-### Setup
-```sh
-virtualenv env # Use Python 3
-source env/bin/activate
-pip install -r requirements.txt
-```
-
-### Test
-```sh
-cd src/python/competition
-green tests
-```
+## 遺伝的アルゴリズムのパラメータ
+/src/python/competition内
+### 遺伝子座で入力として使われるフィールド情報
+ga/individual.pyの変数near_cells
+### 各世代の集団数
+learn.pyのn_individuals
+### エリート個数
+learn.pyのnumberOfElites
+### 突然変異率
+learn.pyのmutation_rate
